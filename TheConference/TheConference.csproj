@@ -136,6 +136,7 @@
     <Compile Include="Models\Class\Admin.cs" />
     <Compile Include="Models\Class\AdresBlog.cs" />
     <Compile Include="Models\Class\Anasayfa.cs" />
+    <Compile Include="Models\Class\BlogYorum.cs" />
     <Compile Include="Models\Class\Blog.cs" />
     <Compile Include="Models\Class\Context.cs" />
     <Compile Include="Models\Class\Hakkimizda.cs" />
@@ -255,6 +256,11 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Doc\notes.md" />
+    <Content Include="Views\Blog\BlogDetay.cshtml" />
+    <Content Include="Views\Blog\Index__yedek.cshtml" />
+    <Content Include="Views\Blog\Partial1.cshtml" />
+    <Content Include="Views\Blog\HomeContentContainer.cshtml" />
+    <Content Include="Views\Blog\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

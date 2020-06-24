@@ -3,10 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*@using TheConference.Models.Class
-    @model   List<Blog>*@
+@using TheConference.Models.Class
+@model   List<Blog>
 
-@model TheConference.Models.Class.BlogYorum
 
 @section Style {
 
@@ -20,7 +19,23 @@
 
 
 @section HomeContentContainer {
-    @Html.Action("HomeContentContainer", "Blog")
+    <div class="home_content_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content d-flex flex-row align-items-end justify-content-start">
+                        <div class="current_page">News</div>
+                        <div class="breadcrumbs ml-auto">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>News</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 }
 
 <div class="news">
@@ -31,7 +46,7 @@
                 <div class="news_items">
 
 
-                    @foreach (var posts in Model.Deger1)
+                    @foreach (var posts in Model)
                     {
 
 
@@ -43,8 +58,8 @@
                                 <div class="date_container">
                                     <a href="/Blog/BlogDetay/@posts.ID">
                                         <span class="date_content d-flex flex-column align-items-center justify-content-center">
-                                            <div class="date_day">@posts.Tarih.ToString("MMM")</div>
-                                            <div class="date_month"> @posts.Tarih.ToString("dd")</div>
+                                            <div class="date_day">15</div>
+                                            <div class="date_month">May</div>
                                         </span>
                                     </a>
                                 </div>
@@ -66,7 +81,7 @@
                                 </div>
                                 <div class="news_text">
                                     <p>
-                                        @posts.Aciklama.Substring(0,250) ...
+                                        @posts.Aciklama
 
                                     </p>
                                 </div>
@@ -111,20 +126,32 @@
                         <div class="latest_posts_title">Latest Posts</div>
                         <div class="latest_container">
 
-                            @foreach (var y in Model.Deger3)
-                            {
-                                <!-- Latest -->
-                                <div class="latest d-flex flex-row align-items-start justify-content-start">
-                                    <div><div class="latest_image"><img src="/assets/images/latest_1.jpg" alt=""></div></div>
-                                    <div class="latest_content">
-                                        <div class="latest_title"><a href="#">@y.Baslik</a></div>
-                                        <div class="latest_date">April 02, 2017</div>
-                                    </div>
+                            <!-- Latest -->
+                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                                <div><div class="latest_image"><img src="/assets/images/latest_1.jpg" alt=""></div></div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="#">A big discovery in science</a></div>
+                                    <div class="latest_date">April 02, 2017</div>
                                 </div>
+                            </div>
 
-                            }
+                            <!-- Latest -->
+                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                                <div><div class="latest_image"><img src="/assets/images/latest_2.jpg" alt=""></div></div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="#">Marketing for everybody</a></div>
+                                    <div class="latest_date">April 02, 2017</div>
+                                </div>
+                            </div>
 
-
+                            <!-- Latest -->
+                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                                <div><div class="latest_image"><img src="/assets/images/latest_3.jpg" alt=""></div></div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="#">New ways to improve ypurself</a></div>
+                                    <div class="latest_date">April 02, 2017</div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

@@ -34,10 +34,12 @@ namespace conference.Controllers
         }
 
 
+
         [HttpPost]
-        public ActionResult Create( )
+        public ActionResult Create(/*post post*/)
         {
-       
+          //  db.posts.Add(post);
+         //   db.SaveChanges();
             return RedirectToAction("Contact", "Home");
         }
 
@@ -47,8 +49,8 @@ namespace conference.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
+          //  var model = db.posts.ToList();
+            return View(/*model*/);
         }
 
 

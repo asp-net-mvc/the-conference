@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model  TheConference.Models.Class.BlogYorum
+
+
+@section Style {
+
+    @Styles.Render("~/assets/css/news.css")
+    @Styles.Render("~/assets/css/news_responsive.css")
+}
+
+@section ParallaxBackground {
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/assets/images/news.jpg" data-speed="0.8"></div>
+}
+
+@*https://www.youtube.com/watch?v=ql-IDsucM7g&list=PLKnjBHu2xXNNhJQ6SyF7Wyhqza9mkMGSw&index=24*@
+@section HomeContentContainer {
+    @Html.Action("HomeContentContainer", "Blog")
+}
+
+<div class="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <div class="news_items">
+
+
+                    @foreach (var x in Model.Deger1)
+                    {
+
+                        <!-- News Item -->
+                        <div class="news_item">
+                            <div class="news_image_container">
+                                <div class="news_image"><img src="/assets/images/news_1.jpg" alt=""></div>
+                                <div class="date_container">
+                                    <a href="#">
+                                        <span class="date_content d-flex flex-column align-items-center justify-content-center">
+                                            <div class="date_day">15</div>
+                                            <div class="date_month">May</div>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news_body">
+                                <div class="news_title"><a href="#">    @x.Baslik</a></div>
+                                <div class="news_info">
+                                    <ul>
+                                        <!-- News Author -->
+                                        <li>
+                                            <div class="news_author_image"><img src="/assets/images/news_author_1.jpg" alt=""></div>
+                                            <span>by <a href="#">Michael Smith</a></span>
+                                        </li>
+                                        <!-- Tags -->
+                                        <li><span>in <a href="events.html">Events</a></span></li>
+                                        <!-- Comments -->
+                                        <li><a href="#">3 Comments</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news_text">
+                                    <p>
+                                        @x.Aciklama
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    }
+
+                </div>
+
+
+
+                <div class="row d-flex justify-content-center mt-100 mb-100">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Latest Comments</h4>
+                            </div>
+
+                            <div class="comment-widgets">
+
+
+                                @foreach (var yorum in Model.Deger2)
+                                {
+
+                                    <!-- Comment Row -->
+                                    <div class="d-flex flex-row comment-row m-t-0">
+                                        <div class="p-2"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg" alt="user" width="50" class="rounded-circle"></div>
+                                        <div class="comment-text w-100">
+                                            <h6 class="font-medium">@yorum.KullaniciAdi</h6> <span class="m-b-15 d-block">This is awesome website. I would love to comeback again. </span>
+                                            <div class="comment-footer"> <span class="text-muted float-right">April 14, 2019</span> <button type="button" class="btn btn-cyan btn-sm">Edit</button> <button type="button" class="btn btn-success btn-sm">Publish</button> <button type="button" class="btn btn-danger btn-sm">Delete</button> </div>
+                                        </div>
+                                    </div> <!-- Comment Row -->
+                                    <hr />
+                                }
+
+                            </div> <!-- Card -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="tickets">
+                        <div class="background_image" style="background-image:url(/assets/images/tickets.jpg)"></div>
+                        <div class="tickets_inner text-center">
+                            <div class="tickets_title">Buy Tickets</div>
+                            <div class="tickets_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis id expl icabo. Esum dolor sit amet, consect etur adipisi cing elit. Perferendis id explica bo.</div>
+                            <div class="tickets_next"><a href="#">See Next Event</a></div>
+                            <div class="button tickets_button"><a href="#">Buy Tickets Now!</a></div>
+                        </div>
+                    </div>
+
+                    <!-- sidebar categories -->
+                    @Html.Action("Partial1", "Blog")
+
+
+
+
+                    <div class="latest_posts">
+                        <div class="latest_posts_title">Latest Posts</div>
+                        <div class="latest_container">
+
+                            <!-- Latest -->
+                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                                <div><div class="latest_image"><img src="/assets/images/latest_1.jpg" alt=""></div></div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="#">A big discovery in science</a></div>
+                                    <div class="latest_date">April 02, 2017</div>
+                                </div>
+                            </div>
+
+                            <!-- Latest -->
+                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                                <div><div class="latest_image"><img src="/assets/images/latest_2.jpg" alt=""></div></div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="#">Marketing for everybody</a></div>
+                                    <div class="latest_date">April 02, 2017</div>
+                                </div>
+                            </div>
+
+                            <!-- Latest -->
+                            <div class="latest d-flex flex-row align-items-start justify-content-start">
+                                <div><div class="latest_image"><img src="/assets/images/latest_3.jpg" alt=""></div></div>
+                                <div class="latest_content">
+                                    <div class="latest_title"><a href="#">New ways to improve ypurself</a></div>
+                                    <div class="latest_date">April 02, 2017</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/assets/js/news.js")
+}
+
+
+
